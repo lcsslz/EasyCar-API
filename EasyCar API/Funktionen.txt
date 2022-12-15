@@ -1,0 +1,24 @@
+-----Login -------
+1- Anmeldedaten prüfen(nutzerName,password):Response /user as Json									// PrüfeAnmeldung mit Nutzername & Passwort
+
+
+---Übersicht -------
+1- gelAlleNichtGebuchteAutos():Response/ list<Car>													// -> GetFahrzeuge mit 0 & 5x -1
+2- getAuto(model_id,marke_id,type_id): Res /list<Car>												// GetFahrzeuge mit 0 & -1 & jeweilige IDs
+3- zeigmeinAutos(user_id):Response/ list<Car>														// -> GetFahrzeuge mit 0 & PersonalID & 4x -1
+4- getAlleModel / Marke / Type																		// GetMarken GetModelle GetTypen
+
+-----Buchung --------
+1- BuchAuto(user_id,auto_id,startDatum):Response/Buchung											// FahrzeugBuchen mit PersonalID & FahrzeugID & StartDatum
+2- AutoAusbuchen(auto_id,EndKm,EndDatum,Zustand_id): Response/Buchung								// FahrzeugAusbuchen mit FahrzeugID & ZustandID & EndKm & EndDatum
+
+----Auswertung >>> (Admin)------
+1- gelAlleGebuchteAutos():Response/ list<Car> 														// GetFahrzeuge mit 1 & 5x -1
+2- getAlleAutos():Response/ list<Car> 																// GetFahrzeuge mit 6x -1
+3- getAlleZustände()																				// GetZustände
+4- getAutoNAchZustand(zustand_Id)																	// GetFahrzeuge mit 5x -1 und ZustandID
+5- getAlleBuchungProUser(user_id):Response /Buchung as Json											// GetFahrten mit -1 & PersonalID & -1
+6- insertNewMitarbeiter(user):Response /user as Json												// AddPersonal mit Personal (ID = -1) & Nutzername & Passwort
+7- deleteMitarbeiter(user_id):Response /user as Json												// DeletePersonal mit PersonalID
+8- insertNewAuto(auto):Response /Auto as Json														// AddFahrzeug mit Fahrzeug (ID = -1)
+9- deleteAuto(auto_id):Response /Auto as Json														// DeleteFahrzeug mit FahrzeugID
